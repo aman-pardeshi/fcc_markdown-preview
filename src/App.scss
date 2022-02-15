@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+$darkAccent: #224b4b;
+$lightAccent: #ccf2ff;
+$backgroundBase: #00e6e6;
+
+$shadow: 1px 1px 10px 2px darken($backgroundBase, 20%);
+$default-border: 1px solid darken($backgroundBase, 35%);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: lighten($backgroundBase, 12%);
+}
+
+.colorScheme {
+  background-color: lighten($backgroundBase, 30%);
+  border: $default-border;
+  box-shadow: $shadow;
+  border-top: none;
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .editor-section,
+  .preview-section {
+    display: flex;
+    flex-direction: column;
+
+    .section-title {
+      border: $default-border;
+      margin-bottom: 0px;
+      background-color: lighten($darkAccent, 25%);
+      box-shadow: $shadow;
+      font-family: Russo One;
+      font-size: 1.2rem;
+    }
+  }
+
+  .editor-section {
+    .inputArea {
+      @extend .colorScheme;
+      width: 600px;
+      height: 25vh;
+      margin-left: auto;
+      padding: 10px;
+    }
+  }
+
+  .preview-section {
+    #preview {
+      @extend .colorScheme;
+      width: 900px;
+      border: $default-border;
+      padding: 15px;
+      overflow: auto;
+      padding: 0 1rem;
+
+      blockquote {
+        border-left: 3px solid #224b4b;
+        color: #224b4b;
+        padding-left: 5px;
+        margin-left: 25px;
+      }
+
+      > p > code {
+        padding: 3px;
+      }
+
+      code {
+        background: white;
+        font-size: 0.875rem;
+        font-weight: bold;
+      }
+
+      pre {
+        display: block;
+        overflow: auto;
+        background: white;
+        padding: 5px;
+        line-height: 1.2;
+      }
+
+      h1 {
+        border-bottom: 2px solid $darkAccent;
+      }
+
+      h2 {
+        border-bottom: 1px solid $darkAccent;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        border: 2px solid $darkAccent;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      img {
+        display: block;
+        max-width: 90%;
+        margin: 2rem auto;
+      }
+    }
+  }
+}
+
+#preview {
+}
