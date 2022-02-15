@@ -1,5 +1,6 @@
 import React from 'react';
 import { marked } from 'marked';
+import { initialData } from './initialData';
 import './App.scss';
 
 class App extends React.Component {
@@ -7,7 +8,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      data: '',
+      data: initialData,
     };
     this.handleChange = this.handleChange.bind(this);
   }
